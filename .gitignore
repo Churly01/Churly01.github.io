@@ -35,3 +35,5 @@ typings/
 .yarn-integrity
 
 *.*~
+
+*.*#

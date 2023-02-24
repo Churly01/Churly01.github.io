@@ -1,0 +1,13 @@
+import './App.css';
+import Main from './views/Main.js';
+
+
+function App() {
+  return (
+    <div style= {{width:"10000px", height:"1000px", backgroundColor:'#154c79'}}>
+      <Main/>
+    </div>
+  );
+}
+
+export default App;

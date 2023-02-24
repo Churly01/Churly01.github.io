@@ -4,7 +4,7 @@ import Main from './views/Main.js';
 
 function App() {
   return (
-    <div style= {{width:"100%", height:"100%", backgroundColor:'#154c79'}}>
+      <div style= {{width:"100%", position:'fixed' , height:"100%", backgroundColor:'#154c79'}}>
       <Main/>
     </div>
   );

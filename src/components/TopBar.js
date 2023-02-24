@@ -11,7 +11,7 @@ const TopBar = () => {
         left: '0px',
         height: '5%',
         width: '100%',
-        position:'absolute',
+        position:'relative',
         display: 'flex',
       }}
     >

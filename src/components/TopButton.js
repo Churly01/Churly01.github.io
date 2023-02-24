@@ -1,3 +1,5 @@
+import Button from '@mui/material/Button';
+
 const TopButton = ({
   text,
 }) =>{
@@ -5,13 +7,14 @@ const TopButton = ({
 
   return (
 
-    <button
+    <Button
       style = {{
         flex:1,
       }}
+      variant="contained"
     >
-      {text}
-    </button>
+      <b>{text}</b>
+    </Button>
 
   );
 }

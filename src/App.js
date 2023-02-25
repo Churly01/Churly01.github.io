@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element = {<Main/>}/>
         <Route path= "/mensajitos" element={<MessagesScreen/>}/>
         <Route path="/diario" element={<DiaryScreen/>}/>
-        <Route path="/viajes" element={<MessagesScreen/>}/>
+        <Route path="/viajes" element={<TripsScreen/>}/>
       </Routes>
     </div>
   );

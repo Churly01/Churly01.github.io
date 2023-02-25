@@ -25,10 +25,12 @@ const TopBar = () => {
         text={<div style={{fontSize:'2em', color:'pink'}}>Para mi amor</div>}/>
 
       <TopButton
+        to="/viajes"
         text='Ideas de Viajes Guays'
       />
 
       <TopButton
+        to='/diario'
         text='Diario Conjunto'
       />
 

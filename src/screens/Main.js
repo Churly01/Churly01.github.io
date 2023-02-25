@@ -3,7 +3,7 @@
 
 const Main = () => {
   return (
-    <div style={{fontSize: "4em", color:"black", margin: "3em", textAlign:'justify'}}>
+    <div style={{fontSize: "2em", color:"black", margin: "1.5em", textAlign:'justify'}}>
       <b>
         Esta es la pagina web que le estoy haciendo a mi amorcito Elena.
         Le va a encantar mucho seguro porque le gustan los mensajitos guays y bonitos.

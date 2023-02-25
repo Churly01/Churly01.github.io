@@ -1,8 +1,11 @@
 const TripsScreen = () => {
   return (
-      <div>
-      Esta sera la pantalla para poner cosas sobre nuestros viajecitos
-      </div>
+    <div style={{fontSize: "4em", color:"black", margin: "3em", textAlign:'justify'}}>
+      <b>
+        Esta sera la pantalla para nuestros viajecitos podemos incluso organizarlos aqui jeje
+      </b> ❤️
+    </div>
+
   );
 }
 

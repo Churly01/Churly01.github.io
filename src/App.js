@@ -8,7 +8,7 @@ import TopBar from './components/TopBar.js';
 
 function App() {
   return (
-    <div style={{position:'fixed', width: '100%',height:'100%',backgroundColor:'rgba(180, 80, 80, 0.2)'}}>
+    <div style={{position:'fixed', width: '100%',height:'100%',backgroundColor:'rgba(180, 80, 80, 0.2)', overflow:'scroll'}}>
       <TopBar/>
       <Routes>
         <Route path="/" element = {<Main/>}/>

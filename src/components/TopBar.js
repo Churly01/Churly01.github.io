@@ -1,9 +1,8 @@
-import TopButton from './TopButton.js'
-import LoveButton from './LoveButton.js'
+import TopButton from './TopButton.js';
+import LoveButton from './LoveButton.js';
 
 const TopBar = () => {
   return (
-
  	  <div
       style= {{
         backgroundColor: 'rgb(255, 230, 230)',
@@ -18,20 +17,17 @@ const TopBar = () => {
       <LoveButton/>
       <TopButton
         text='Mensajitos bonitos'
+        to="/mensajitos"
       />
 
-      <div style={{
-        fontSize: '40px',
-        textAlign: 'center',
-        color: 'black',
-        flex:1
-      }}>
-        Para Elena
-      </div>
+      <TopButton
+        to="/"
+        text={<div style={{fontSize:'2em', color:'pink'}}>Para mi amor</div>}/>
 
       <TopButton
         text='Ideas de Viajes Guays'
       />
+
       <TopButton
         text='Diario Conjunto'
       />

@@ -1,36 +1,51 @@
-import TextField from '../components/TextField';
-import apiRequest from '../apiRequest.js';
+import TextField                      from '../components/TextField';
+import apiRequest                     from '../apiRequest.js';
 import React, { useState, useEffect } from 'react';
-
+import MessagesView                   from '../views/MessagesView';
 
 const MessagesScreen = () => {
   const [is_loading, setIsLoading] = useState(true);
   const [messages, setMessages] = useState({});
 
+  const onSaveMessage = (message) => {
+    const options = {
+      body: JSON.stringify(message),
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      }
+    };
+    console.log(message);
+    apiRequest("https://api-online.onrender.com/messages/", "POST", options);
+    setMessages([
+      message,
+      ...messages
+    ]);
+  };
 
-  useEffect( () => {
+  useEffect(() => {
     apiRequest("https://api-online.onrender.com/messages", "GET")
       .then(response => response.json())
       .then(messages => {
-        console.log('HOLA');
         setIsLoading(false);
-        console.log(messages);
         setMessages(messages);
     });
   }, []);
+
+
+
 
   return(
     <div>
       { is_loading? 'cargando':
         <div>
-          <TextField style ={{display:"block", margin:"50px", position:"relative"}}/>
+          <TextField onSaveMessage={onSaveMessage}/>
+          <MessagesView
+            messages={messages}
 
-          <ul>
-            { messages.map( message => <li key = {message._id}>{message.messageText}</li>)}
-          </ul>
+          />
         </div>
       }
-
     </div>
   );
 };

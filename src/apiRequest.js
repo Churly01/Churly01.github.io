@@ -10,6 +10,7 @@ function apiRequest(url, method, options) {
     method,
     ...options
   }
+  console.log(request);
 
   return fetch(url, request);
 }

@@ -12,7 +12,6 @@ const MessagesScreen = () => {
       body: JSON.stringify(message),
       headers: {
         "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       }
     };
     console.log(message);
@@ -31,8 +30,6 @@ const MessagesScreen = () => {
         setMessages(messages);
     });
   }, []);
-
-
 
 
   return(

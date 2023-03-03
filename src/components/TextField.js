@@ -9,16 +9,12 @@ const TextField = ({
   const onChange = event => {
     setVal(event.target.value);
   };
-
   const onClick = () => {
-    //TODO CREATE API CALL TO STORE THE MESSAGE
-    alert("Lo siento gordi por ahora no se pueden guardar mensajes, pero es lo siguiente por hacer");
     onSaveMessage({
       messageText: val,
       messageTitle: "Elena me da amor"
     });
   };
-
   return (
     <div
       style={{display:"inline-block", marginTop:"10px", marginLeft:"5px"}}

@@ -7,9 +7,9 @@ function MessagesView({
 ){
   console.log(messages);
   return (
-      <div>
-        {messages.map(message => <Message key ={message._id}message={message}/>)}
-      </div>
+      <ul>
+        {messages.map(message => <li><Message key ={message._id}message={message}/></li>)}
+      </ul>
   );
 }
 

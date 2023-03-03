@@ -5,9 +5,7 @@ const Message = ({
 }) => {
   return (
     <div>
-      <h1>{message.messageTitle}</h1>
       {message.messageText}
-
     </div>
   );
 };

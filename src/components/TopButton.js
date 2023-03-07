@@ -15,7 +15,7 @@ const TopButton = ({
         style={{height:'100%', width:'100%'}}
         variant="contained"
       >
-        <b >{text}</b>
+        <b style={{fontSize:'2vw', color:'pink'}}>{text}</b>
       </Button>
     </Link>
   );

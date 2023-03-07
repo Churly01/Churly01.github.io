@@ -21,10 +21,11 @@ const LoveButton = () =>{
        <dialog
          open
          style={{
-             fontSize:"4vw",
-             marginTop:"33em",
-             position:"fixed",
-             width:"50%"
+             fontSize:"2vw",
+             top:"15vw",
+             left:"20vw",
+             position:"absolute",
+             width:"60vw"
          }}
        >
          Eres lo mejor que me ha pasado en la vida. Te quiero infinito amor
@@ -32,10 +33,10 @@ const LoveButton = () =>{
            src={paris}
            alt="Elena y yo en paris"
            style = {{
-             marginLeft: "auto",
-             marginRight: "auto",
-             width:"60%",
-             zIndex:1000,
+               marginLeft: "auto",
+               marginRight: "auto",
+               width:"60%",
+               zIndex:1000,
                display:"block"               
            }}
          />

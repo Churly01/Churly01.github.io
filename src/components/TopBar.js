@@ -3,12 +3,12 @@ import LoveButton from './LoveButton.js';
 
 const TopBar = () => {
   return (
-      <div
-        style= {{
+    <div
+      style= {{
         backgroundColor: 'rgb(255, 230, 230)',
         top: '0px',
         left: '0px',
-        height: '8vw',
+        height: '6vw',
         width: '100%',
         position:'relative',
         display: 'flex',
@@ -22,7 +22,7 @@ const TopBar = () => {
 
       <TopButton
         to="/"
-        text={<div style={{fontSize:'2vw', color:'pink'}}>Para mi amor</div>}/>
+        text='Para Elenita'/>
 
       <TopButton
         to="/viajes"

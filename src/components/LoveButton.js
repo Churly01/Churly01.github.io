@@ -14,7 +14,6 @@ const LoveButton = () =>{
       onClick={()=>setIsOpen(a=>!a)}
       style={{flex:1}}
       variant="contained"
-
     >
       <b style={{fontSize:'2vw', color:'pink'}}>TE QUIERO MUCHO ELENA</b>
       {is_open &&
@@ -22,10 +21,10 @@ const LoveButton = () =>{
          open
          style={{
              fontSize:"2vw",
-             top:"15vw",
-             left:"20vw",
+             top:"8vw",
+             left:"30vw",
              position:"absolute",
-             width:"60vw"
+             width:"30vw"
          }}
        >
          Eres lo mejor que me ha pasado en la vida. Te quiero infinito amor
@@ -37,7 +36,7 @@ const LoveButton = () =>{
                marginRight: "auto",
                width:"60%",
                zIndex:1000,
-               display:"block"               
+               display:"block"
            }}
          />
        </dialog >

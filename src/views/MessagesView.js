@@ -18,7 +18,8 @@ function MessagesView(){
       .then(response => response.json())
       .then(messages => {
         setIsLoading(false);
-        setMessages(messages);
+        const sorted_messages = messages.sort((a,b) => a > b ? 1 : -1);
+        setMessages(sorted_messages);
     });
   }, []);
 

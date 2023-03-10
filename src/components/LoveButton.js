@@ -24,7 +24,7 @@ const LoveButton = () =>{
              top:"8vw",
              left:"30vw",
              position:"absolute",
-             width:"30vw"
+             height:"60vh"
          }}
        >
          Eres lo mejor que me ha pasado en la vida. Te quiero infinito amor
@@ -34,7 +34,7 @@ const LoveButton = () =>{
            style = {{
                marginLeft: "auto",
                marginRight: "auto",
-               width:"60%",
+               height: "50vh",
                zIndex:1000,
                display:"block"
            }}

@@ -1,6 +1,9 @@
 import {useState, useEffect} from 'react';
 import paris                 from "../Paris.jpg";
-import Button from '@mui/material/Button';
+import Button                from '@mui/material/Button';
+import { FontAwesomeIcon }   from '@fortawesome/react-fontawesome';
+import { faHeart }        from '@fortawesome/free-solid-svg-icons';
+
 
 const LoveButton = () =>{
   const [is_open, setIsOpen] = useState(false);
@@ -15,16 +18,16 @@ const LoveButton = () =>{
       style={{flex:1}}
       variant="contained"
     >
-      <b style={{fontSize:'2vw', color:'pink'}}>TE QUIERO MUCHO ELENA</b>
+      <FontAwesomeIcon icon ={faHeart}/>
       {is_open &&
        <dialog
          open
          style={{
-             fontSize:"2vw",
-             top:"8vw",
-             left:"30vw",
-             position:"absolute",
-             height:"60vh"
+           fontSize:"clamp(1rem, 3vh, 10rem)",
+           top:"10vh",
+           left:"5vw",
+           position:"absolute",
+           width: "clamp(19rem, 50vw, 100rem)",
          }}
        >
          Eres lo mejor que me ha pasado en la vida. Te quiero infinito amor
@@ -32,11 +35,11 @@ const LoveButton = () =>{
            src={paris}
            alt="Elena y yo en paris"
            style = {{
-               marginLeft: "auto",
-               marginRight: "auto",
-               height: "50vh",
-               zIndex:1000,
-               display:"block"
+             marginLeft: "auto",
+             marginRight: "auto",
+             width: "clamp(18rem, 45vw, 50rem)",
+             zIndex:1000,
+             display:"block"
            }}
          />
        </dialog >

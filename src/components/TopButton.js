@@ -1,9 +1,12 @@
-import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+import Button              from '@mui/material/Button';
+import { Link }            from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const TopButton = ({
   text,
   to,
+  icon,
 }) =>{
 
 
@@ -15,7 +18,11 @@ const TopButton = ({
         style={{height:'100%', width:'100%'}}
         variant="contained"
       >
-        <b style={{fontSize:'2vw', color:'pink'}}>{text}</b>
+        {
+          icon !=null ?  <FontAwesomeIcon  icon={icon}/>
+          : <b>{text}</b>
+        }
+
       </Button>
     </Link>
   );

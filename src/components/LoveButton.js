@@ -18,7 +18,7 @@ const LoveButton = () =>{
       style={{flex:1}}
       variant="contained"
     >
-      <FontAwesomeIcon icon ={faHeart}/>
+      <FontAwesomeIcon icon ={faHeart} style={{fontSize:'2em'}}/>
       {is_open &&
        <dialog
          open

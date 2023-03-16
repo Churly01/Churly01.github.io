@@ -8,9 +8,7 @@ const Main = () => {
         Dentro de poco va a poder escribir mensajitos y que se guarden para siempre
       </b> ❤️
     </div>
-    );
+  );
 };
 
 export default Main;
-
-

@@ -19,10 +19,9 @@ const TopButton = ({
         variant="contained"
       >
         {
-          icon !=null ?  <FontAwesomeIcon  icon={icon}/>
-          : <b>{text}</b>
+          icon !=null ?  <FontAwesomeIcon  icon={icon} style={{fontSize:'2em'}}/>
+          : <b style={{fontSize:'1.5em'}}>{text}</b>
         }
-
       </Button>
     </Link>
   );

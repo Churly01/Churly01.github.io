@@ -47,12 +47,14 @@ const Register = () => {
           }}
         />
         <input
+          type={"password"}
           placeholder="Password..."
           onChange={(event) => {
             setRegisterPassword(event.target.value);
           }}
         />
         <input
+          type={"password"}
           placeholder="Confirm Password..."
           onChange={(event) => {
             setConfirmPassword(event.target.value);
@@ -71,6 +73,7 @@ const Register = () => {
           }}
         />
         <input
+          type={"password"}
           placeholder="Password..."
           onChange={(event) => {
             setLoginPassword(event.target.value);

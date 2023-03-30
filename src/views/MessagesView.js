@@ -8,15 +8,13 @@ function MessagesView(){
   const {user} = useAuth();
   const [is_loading, setIsLoading] = useState(true);
   const [messages, setMessages] = useState({});
-  console.log(user.uid);
   const onClickTrash = (id) => {
     apiRequest(`${process.env.REACT_APP_API_URL}/messages/${id}`, "DELETE")
-      .then(response => console.log(response.json()));
+      .then(response => response.json());
     setMessages(messages.filter(elem => elem._id !== id));
   };
 
   useEffect(() => {
-    console.log(process.env.REACT_APP_API_URL);
     apiRequest(`${process.env.REACT_APP_API_URL}/messages`, "GET")
       .then(response => response.json())
       .then(messages => {
@@ -39,7 +37,6 @@ function MessagesView(){
         "Content-Type": "application/json",
       }
     };
-    console.log(options);
     apiRequest(`${process.env.REACT_APP_API_URL}/messages/`, "POST", options);
     setMessages([
       complete_message,

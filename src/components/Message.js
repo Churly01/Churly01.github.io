@@ -26,7 +26,6 @@ const Message = ({
 
           });
   },[apiRequest, message.creator_firebase_id]);
-  console.log(creator);
   return (
     <div>
 

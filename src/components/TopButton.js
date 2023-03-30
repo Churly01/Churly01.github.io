@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const TopButton = ({
-  text,
+  element,
   to,
   icon,
 }) =>{
@@ -20,11 +20,11 @@ const TopButton = ({
       >
         {
           icon !=null ?  <FontAwesomeIcon  icon={icon} style={{fontSize:'2em'}}/>
-          : <b style={{fontSize:'1.5em'}}>{text}</b>
+          : <b style={{fontSize:'1.5em'}}>{element}</b>
         }
       </Button>
     </Link>
   );
-}
+};
 
 export default TopButton;

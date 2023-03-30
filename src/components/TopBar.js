@@ -2,9 +2,10 @@ import TopButton  from './TopButton.js';
 import LoveButton from './LoveButton.js';
 import {
   faEnvelope,
-  faBook,
   faSuitcaseRolling
 }                 from '@fortawesome/free-solid-svg-icons';
+import UserPopover from '../components/UserPopover';
+
 
 const TopBar = () => {
   return (
@@ -21,26 +22,23 @@ const TopBar = () => {
     >
       <LoveButton/>
       <TopButton
-        text='Mensajitos bonitos'
+        element='Mensajitos bonitos'
         to="/mensajitos"
         icon={faEnvelope}
       />
       <TopButton
         to="/"
-        text='Para Elenita'/>
+        element={'Para Elenita'}/>
 
       <TopButton
         to="/viajes"
-        text='Viajes Guays'
+        element='Viajes Guays'
         icon={faSuitcaseRolling}
       />
-
       <TopButton
-        to='/diario'
-        text='Diario Conjunto'
-        icon={faBook}
+        to="/userConfig"
+        element={<UserPopover/>}
       />
-
     </div>
   );
 };

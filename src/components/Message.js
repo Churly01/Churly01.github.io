@@ -19,7 +19,7 @@ const Message = ({
   const time = date + ' de ' + month + ' ' + year + ' ' + hour + ':' + min ;    // final date with time, you can use this according your requirement
 
   useEffect( () => {
-    apiRequest(`${process.env.REACT_APP_API_URL}/users/firebase/${message.creator_firebase_id}`, "GET")
+    apiRequest(`/users/firebase/${message.creator_firebase_id}`, "GET")
           .then(response => response.json())
           .then(user => {
             setCreator(user);

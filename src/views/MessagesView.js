@@ -1,27 +1,28 @@
-import Message from '../components/Message';
+import Message                        from '../components/Message';
 import TextField                      from '../components/TextField';
-import useApiRequest                     from '../hooks/useApiRequest.js';
+import useApiRequest                  from '../hooks/useApiRequest.js';
 import React, { useState, useEffect } from 'react';
-import {useAuth} from '../contexts/AuthContext.js';
+import {useAuth}                      from '../contexts/AuthContext.js';
+
 function MessagesView(){
   const apiRequest = useApiRequest();
   const {user} = useAuth();
   const [is_loading, setIsLoading] = useState(true);
   const [messages, setMessages] = useState({});
   const onClickTrash = (id) => {
-    apiRequest(`${process.env.REACT_APP_API_URL}/messages/${id}`, "DELETE")
+    apiRequest(`/messages/${id}`, "DELETE")
       .then(response => response.json());
     setMessages(messages.filter(elem => elem._id !== id));
   };
 
   useEffect(() => {
-    apiRequest(`${process.env.REACT_APP_API_URL}/messages`, "GET")
+    apiRequest('/messages', "GET")
       .then(response => response.json())
       .then(messages => {
         setIsLoading(false);
         const sorted_messages = messages.sort((a,b) => a > b ? 1 : -1);
         setMessages(sorted_messages);
-    });
+      });
   }, [apiRequest]);
 
   const onSaveMessage = (message) => {
@@ -37,7 +38,7 @@ function MessagesView(){
         "Content-Type": "application/json",
       }
     };
-    apiRequest(`${process.env.REACT_APP_API_URL}/messages/`, "POST", options);
+    apiRequest('/messages/', "POST", options);
     setMessages([
       complete_message,
       ...messages
@@ -51,11 +52,11 @@ function MessagesView(){
       {messages.map(message => (
         <li key={message._id}>
           <div style={{
-                 display:'flex',
-                 padding:'0.2em',
-                 border: '2px solid grey',
-                 margin: '0.3em'
-               }}>
+            display:'flex',
+            padding:'0.2em',
+            border: '2px solid grey',
+            margin: '0.3em'
+          }}>
             <Message message={message} onClickTrash={onClickTrash}/>
           </div>
         </li>

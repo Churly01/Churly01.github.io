@@ -5,6 +5,7 @@ import DiaryScreen     from './screens/DiaryScreen.js';
 import MessagesScreen  from './screens/MessagesScreen.js';
 import LoginScreen     from './screens/LoginScreen';
 import SignUpScreen    from './screens/SignUpScreen';
+import UserConfig      from './screens/UserConfig.js';
 import {Route, Routes} from "react-router-dom";
 import TopBar          from './components/TopBar.js';
 import Register        from  './auth/Register.js';
@@ -28,6 +29,7 @@ function App() {
             <Route path="/mensajitos" element={<MessagesScreen/>}/>
             <Route path="/diario" element={<DiaryScreen/>}/>
             <Route path="/viajes" element={<TripsScreen/>}/>
+            <Route path="/userConfig" element={<UserConfig/>}/>
           </Route>
           <Route path="/register" element={<Register/>}/>
         </Routes>

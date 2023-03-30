@@ -18,20 +18,20 @@ function App() {
 
   return (
     <AuthProvider>
-    <div style={{position:'fixed', width: '100%',height:'100%',backgroundColor:'rgba(180, 80, 80, 0.2)', overflow:'scroll', overflowX:'hidden'}}>
-      <TopBar/>
-      <Routes>
-        <Route element={<PrivateRoutes/>}>
-          <Route path="/" exact element={<Main/>}/>
-          <Route path="/signup" element={<SignUpScreen/>}/>
-          <Route path="/login" element={<LoginScreen/>}/>
-          <Route path="/mensajitos" element={<MessagesScreen/>}/>
-          <Route path="/diario" element={<DiaryScreen/>}/>
-          <Route path="/viajes" element={<TripsScreen/>}/>
-        </Route>
-        <Route path="/register" element={<Register/>}/>
-      </Routes>
-    </div>
+      <div style={{position:'fixed', width: '100%',height:'100%',backgroundColor:'rgba(180, 80, 80, 0.2)', overflow:'scroll', overflowX:'hidden'}}>
+        <TopBar/>
+        <Routes>
+          <Route element={<PrivateRoutes/>}>
+            <Route path="/" exact element={<Main/>}/>
+            <Route path="/signup" element={<SignUpScreen/>}/>
+            <Route path="/login" element={<LoginScreen/>}/>
+            <Route path="/mensajitos" element={<MessagesScreen/>}/>
+            <Route path="/diario" element={<DiaryScreen/>}/>
+            <Route path="/viajes" element={<TripsScreen/>}/>
+          </Route>
+          <Route path="/register" element={<Register/>}/>
+        </Routes>
+      </div>
     </AuthProvider>
   );
 }

@@ -8,12 +8,11 @@ import {
 }             from '@firebase/auth';
 
 const AuthContext = React.createContext();
+
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({children}) => {
-
   const [ loading, setLoading ] = useState(true);
-
   const [ user, setUser ] = useState({});
 
   useEffect( () => {
@@ -52,7 +51,6 @@ export const AuthProvider = ({children}) => {
     } catch(err){
       console.log(err.message);
     }
-
   };
 
   const value = {
@@ -67,4 +65,4 @@ export const AuthProvider = ({children}) => {
       {!loading && children}
     </AuthContext.Provider>
   );
-}
+};

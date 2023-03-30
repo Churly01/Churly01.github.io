@@ -1,48 +1,56 @@
 import Message from '../components/Message';
 import TextField                      from '../components/TextField';
-import apiRequest                     from '../apiRequest.js';
-import React, { useState, useEffect } from 'react';
+import useApiRequest                     from '../hooks/useApiRequest.js';
+import React, { useState, useEffect, useCallback, useMemo} from 'react';
+import {useAuth} from '../contexts/AuthContext.js';
 function MessagesView(){
-
+  const apiRequest = useApiRequest();
+  const {user} = useAuth();
   const [is_loading, setIsLoading] = useState(true);
   const [messages, setMessages] = useState({});
-
+  console.log(user.uid);
   const onClickTrash = (id) => {
-    apiRequest(`https://api-online.onrender.com/messages/${id}`, "DELETE")
+    apiRequest(`${process.env.REACT_APP_API_URL}/messages/${id}`, "DELETE")
       .then(response => console.log(response.json()));
     setMessages(messages.filter(elem => elem._id !== id));
   };
 
   useEffect(() => {
-    apiRequest("https://api-online.onrender.com/messages", "GET")
+    console.log(process.env.REACT_APP_API_URL);
+    apiRequest(`${process.env.REACT_APP_API_URL}/messages`, "GET")
       .then(response => response.json())
       .then(messages => {
         setIsLoading(false);
         const sorted_messages = messages.sort((a,b) => a > b ? 1 : -1);
         setMessages(sorted_messages);
     });
-  }, []);
+  }, [apiRequest]);
 
   const onSaveMessage = (message) => {
+    const date = new Date();
+    const complete_message = {
+      ...message,
+      creator_firebase_id: user.uid,
+      creationDate: date.getDate(),
+    };
     const options = {
-      body: JSON.stringify(message),
+      body: JSON.stringify(complete_message),
       headers: {
         "Content-Type": "application/json",
       }
     };
-    console.log(message);
-    apiRequest("https://api-online.onrender.com/messages/", "POST", options);
+    console.log(options);
+    apiRequest(`${process.env.REACT_APP_API_URL}/messages/`, "POST", options);
     setMessages([
-      message,
+      complete_message,
       ...messages
     ]);
   };
 
-  console.log(messages);
   if(is_loading) return <div> cargando</div>;
   return (
     <ul>
-      <TextField onSaveMessage={onSaveMessage}/>
+      <TextField style={{}} onSaveMessage={onSaveMessage}/>
       {messages.map(message => (
         <li key={message._id}>
           <div style={{

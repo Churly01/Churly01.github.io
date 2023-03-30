@@ -4,7 +4,7 @@ const TextField = ({
   onSaveMessage,
 }) => {
 
-  const [val, setVal] = useState("Hola Amorcito escribe aqui");
+  const [val, setVal] = useState();
 
   const onChange = event => {
     setVal(event.target.value);
@@ -17,12 +17,13 @@ const TextField = ({
   };
   return (
     <div
-      style={{display:"inline-block", marginTop:"10px", marginLeft:"5px"}}
+      style={{display:"inline-block", marginTop:"10px", marginLeft:"5px", width:'80%'}}
     >
       <input
         onChange={onChange}
         value={val}
-        style={{fontSize:"2em", marginRight:'10px'}}
+        style={{fontSize:"1em", marginRight:'10px', type:'text', width:'100%', height:'4rem'}}
+        placeholder='Escribe aqui guapi'
       />
 
       <button

@@ -1,4 +1,4 @@
-
+import {useAuth} from '../contexts/AuthContext';
 // {
 //   method,
 //   body,
@@ -15,4 +15,11 @@ function apiRequest(url, method, options) {
   return fetch(url, request);
 }
 
-export default apiRequest
+
+const useApiRequest = () => {
+  const auth = useAuth();
+
+  return apiRequest(undefined, undefined, undefined);
+}
+
+export default useApiRequest;

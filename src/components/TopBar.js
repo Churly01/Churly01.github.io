@@ -1,11 +1,10 @@
-import TopButton from './TopButton.js';
+import TopButton  from './TopButton.js';
 import LoveButton from './LoveButton.js';
-import { faEnvelope,
-         faBook,
-         faSuitcaseRolling
-       }         from '@fortawesome/free-solid-svg-icons';
-
-
+import {
+  faEnvelope,
+  faBook,
+  faSuitcaseRolling
+}                 from '@fortawesome/free-solid-svg-icons';
 
 const TopBar = () => {
   return (
@@ -14,9 +13,9 @@ const TopBar = () => {
         backgroundColor: 'rgb(255, 230, 230)',
         top: '0px',
         left: '0px',
-        height: 'clamp(4rem, 6vw, 10rem)',
+        height: 'clamp(4rem, 6vh, 10rem)',
         width: '100%',
-        position:'relative',
+        position:'sticky',
         display: 'flex',
       }}
     >
@@ -26,7 +25,6 @@ const TopBar = () => {
         to="/mensajitos"
         icon={faEnvelope}
       />
-
       <TopButton
         to="/"
         text='Para Elenita'/>

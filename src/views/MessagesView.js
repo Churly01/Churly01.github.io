@@ -1,7 +1,7 @@
 import Message from '../components/Message';
 import TextField                      from '../components/TextField';
 import useApiRequest                     from '../hooks/useApiRequest.js';
-import React, { useState, useEffect, useCallback, useMemo} from 'react';
+import React, { useState, useEffect } from 'react';
 import {useAuth} from '../contexts/AuthContext.js';
 function MessagesView(){
   const apiRequest = useApiRequest();

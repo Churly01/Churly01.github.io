@@ -5,7 +5,7 @@ const  UserPopover = () => {
   const [name, setName] = useState('aaa');
   const apiRequest = useApiRequest();
   const { user } = useAuth();
-  const uid = user.uid;
+  const uid = user?.uid;
 
   useEffect( () =>
     {

@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash }         from '@fortawesome/free-solid-svg-icons';
 import useApiRequest  from '../hooks/useApiRequest';
 import { useEffect, useState } from 'react';
+import '../static/styles/marvelous.css';
+
 const Message = ({
   message,
   onClickTrash
@@ -23,12 +25,10 @@ const Message = ({
           .then(response => response.json())
           .then(user => {
             setCreator(user);
-
           });
   },[apiRequest, message.creator_firebase_id]);
   return (
-    <div>
-
+    <div className='darker' style={{ height:'100%', width:'100%'}}>
       <FontAwesomeIcon onClick={() => onClickTrash(message._id)} icon={faTrash} style={{marginRight:'0.3em'}}/>
       {message.messageText} <br/>
       {time}<br/>{creator[0]?.first_name}

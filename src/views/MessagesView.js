@@ -50,15 +50,13 @@ function MessagesView(){
     <ul>
       <TextField style={{}} onSaveMessage={onSaveMessage}/>
       {messages.map(message => (
-        <li key={message._id}>
-          <div style={{
+        <li key={message._id} style={{
             display:'flex',
-            padding:'0.2em',
+            padding:'0em',
             border: '2px solid grey',
             margin: '0.3em'
           }}>
             <Message message={message} onClickTrash={onClickTrash}/>
-          </div>
         </li>
       ))}
     </ul>

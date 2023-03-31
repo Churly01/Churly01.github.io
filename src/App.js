@@ -22,6 +22,8 @@ function App() {
       <div style={{position:'fixed', width: '100%',height:'100%',backgroundColor:'rgba(180, 80, 80, 0.2)', overflow:'scroll', overflowX:'hidden'}}>
         <TopBar/>
         <Routes>
+          <Route path="/register" exact element={<Register/>}/>
+          <Route path="/login" exact element={<SignUpScreen/>}/>
           <Route element={<PrivateRoutes/>}>
             <Route path="/" exact element={<Main/>}/>
             <Route path="/signup" element={<SignUpScreen/>}/>
@@ -29,9 +31,8 @@ function App() {
             <Route path="/mensajitos" element={<MessagesScreen/>}/>
             <Route path="/diario" element={<DiaryScreen/>}/>
             <Route path="/viajes" element={<TripsScreen/>}/>
-            <Route path="/userConfig" element={<UserConfig/>}/>
+            <Route path="/userConfig" element={<UserConfig/>}/>            
           </Route>
-          <Route path="/register" element={<Register/>}/>
         </Routes>
       </div>
     </AuthProvider>

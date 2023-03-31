@@ -1,6 +1,6 @@
 import {useAuth} from '../contexts/AuthContext';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Register = () => {
 
@@ -36,56 +36,32 @@ const Register = () => {
     await login(login_email, login_password);
     navigate("/");
   };
-  return (
-    <div className="App">
-      <div>
-        <h3> Register User </h3>
-        <input
-          placeholder="Email..."
-          onChange={(event) => {
+  return (  
+      <div style={{gap: '1em', display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
+      <h3> Register User </h3>
+      <input
+        placeholder="Email..."
+        onChange={(event) => {
             setRegisterEmail(event.target.value);
-          }}
+        }}
         />
-        <input
-          type={"password"}
-          placeholder="Password..."
-          onChange={(event) => {
+      <input
+        type={"password"}
+        placeholder="Password..."
+        onChange={(event) => {
             setRegisterPassword(event.target.value);
-          }}
-        />
-        <input
-          type={"password"}
-          placeholder="Confirm Password..."
-          onChange={(event) => {
+        }}
+      />
+      <input
+        type={"password"}
+        placeholder="Confirm Password..."
+        onChange={(event) => {
             setConfirmPassword(event.target.value);
-          }}
-        />
-        {!creating_account && <button onClick={handleSubmitRegister}> Create User</button>}
-        <span>{error}</span>
-      </div>
-
-      <div>
-        <h3> Login </h3>
-        <input
-          placeholder="Email..."
-          onChange={(event) => {
-            setLoginEmail(event.target.value);
-          }}
-        />
-        <input
-          type={"password"}
-          placeholder="Password..."
-          onChange={(event) => {
-            setLoginPassword(event.target.value);
-          }}
-        />
-        <button onClick={handleSubmitLogin}> Login</button>
-      </div>
-
-      <h4> User Logged In: </h4>
-      {user?.email}
-
-      <button onClick={logout}> Sign Out </button>
+        }}
+      />
+      {!creating_account && <button onClick={handleSubmitRegister}> Create User</button>}
+      <span>{error}</span>
+        <div> <Link to='/login'> Ya tienes cuenta? Clica Aqui para logearte</Link></div>
     </div>
   );
 };

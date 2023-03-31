@@ -3,9 +3,8 @@ import { useAuth }         from '../contexts/AuthContext.js';
 
 const PrivateRoutes = () => {
   const { user } = useAuth();
-
   return(
-    user ? <Outlet/> : <Navigate to="register"/>
+    user ? <Outlet/> : <Navigate to="/register"/>
   );
 
 }

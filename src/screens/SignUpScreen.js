@@ -6,8 +6,7 @@ const SignUpScreen = () => {
 
   const [ login_email, setLoginEmail ] = useState("");
   const [ login_password, setLoginPassword] = useState("");
-  const [ error, setError ] = useState("");
-  const { register, user, login, logout } =  useAuth();
+  const { user, login, logout } =  useAuth();
 
   const navigate = useNavigate();
 

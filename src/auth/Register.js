@@ -6,11 +6,9 @@ const Register = () => {
 
   const [ register_email, setRegisterEmail ] = useState("");
   const [ register_password, setRegisterPassword] = useState("");
-  const [ login_email, setLoginEmail ] = useState("");
-  const [ login_password, setLoginPassword] = useState("");
   const [ confirm_password, setConfirmPassword ] = useState("");
   const [ error, setError ] = useState("");
-  const { register, user, login, logout } =  useAuth();
+  const { register } =  useAuth();
   const [ creating_account, setCreatingAccount ] = useState(false);
 
   const navigate = useNavigate();
@@ -31,11 +29,6 @@ const Register = () => {
     setCreatingAccount(false);
   };
 
-  const handleSubmitLogin = async e => {
-    e.preventDefault();
-    await login(login_email, login_password);
-    navigate("/");
-  };
   return (  
       <div style={{gap: '1em', display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
       <h3> Register User </h3>

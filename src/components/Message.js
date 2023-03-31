@@ -34,7 +34,7 @@ const Message = ({
             border: '2px solid grey',
             margin: '0.3em'
           }}>
-      <FontAwesomeIcon onClick={() => onClickTrash(message._id)} icon={faTrash} style={{marginRight:'0.3em'}}/>
+      <FontAwesomeIcon onClick={() => onClickTrash(message._id)} icon={faTrash} style={{marginRight:'0.3em', cursor:'pointer'}}/>
       {message.messageText} <br/>
       {time}<br/>{creator[0]?.first_name}
     </div>

@@ -28,7 +28,12 @@ const Message = ({
           });
   },[apiRequest, message.creator_firebase_id]);
   return (
-    <div className='darker' style={{ height:'100%', width:'100%'}}>
+    <div className='darker' style={{
+            display:'flex',
+            padding:'0.3em',
+            border: '2px solid grey',
+            margin: '0.3em'
+          }}>
       <FontAwesomeIcon onClick={() => onClickTrash(message._id)} icon={faTrash} style={{marginRight:'0.3em'}}/>
       {message.messageText} <br/>
       {time}<br/>{creator[0]?.first_name}

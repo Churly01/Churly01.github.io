@@ -29,7 +29,8 @@ function App() {
   useEffect(()=> {document.title ='La web de mi Elenita';}, []);
 
   useEffect(()=> {
-    if(!auth || !user) return;
+    if(!user) return;
+    if(!auth) { setLoading(false); return;}
     apiRequest(`/users/firebase/${user.uid}`)
       .then(res => res.json())
       .then(userInfo => {

@@ -1,5 +1,4 @@
 import './App.css';
-import { useState } from  'react';
 import Main            from './screens/Main.js';
 import TripsScreen     from './screens/TripsScreen.js';
 import DiaryScreen     from './screens/DiaryScreen.js';
@@ -23,7 +22,6 @@ function App() {
   const auth = useAuth();
   const user = auth?.user;
   const apiRequest = useApiRequest();
-  const [loading, setLoading] = useState(true);
   console.log(auth);
 
   useEffect(()=> {document.title ='La web de mi Elenita';}, []);
@@ -34,14 +32,12 @@ function App() {
         .then(res => res.json())
         .then(userInfo => {
           dispatch(add(userInfo[0]));
-          setLoading(false);
+
         });
     }
   }, [apiRequest, dispatch, auth, user]);
 
   return (
-    <>
-      {loading ? 'cargando' :(
           <div style={{position:'fixed', width: '100%',height:'100%',backgroundColor:'rgba(180, 80, 80, 0.2)', overflow:'scroll', overflowX:'hidden'}}>
             <TopBar/>
             <Routes>
@@ -58,8 +54,6 @@ function App() {
               </Route>
             </Routes>
           </div>
-      )}
-    </>
   );
 }
 

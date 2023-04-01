@@ -29,15 +29,14 @@ function App() {
   useEffect(()=> {document.title ='La web de mi Elenita';}, []);
 
   useEffect(()=> {
-    if(!user) return;
-    if(!auth) { setLoading(false); return;}
-    apiRequest(`/users/firebase/${user.uid}`)
-      .then(res => res.json())
-      .then(userInfo => {
-        dispatch(add(userInfo[0]));
-        setLoading(false);
-      });
-    setLoading(false);
+    if(user){
+      apiRequest(`/users/firebase/${user.uid}`)
+        .then(res => res.json())
+        .then(userInfo => {
+          dispatch(add(userInfo[0]));
+          setLoading(false);
+        });
+    }
   }, [apiRequest, dispatch, auth, user]);
 
   return (

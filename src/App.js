@@ -17,11 +17,9 @@ import { useDispatch } from 'react-redux';
 import { add } from './reducers/userSlice';
 import useApiRequest from './hooks/useApiRequest';
 
-
 function App() {
 
   const dispatch = useDispatch();
-
   const auth = useAuth();
   const user = auth?.user;
   const apiRequest = useApiRequest();

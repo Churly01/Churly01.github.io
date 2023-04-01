@@ -7,8 +7,8 @@ import reportWebVitals    from './reportWebVitals';
 import { configureStore } from '@reduxjs/toolkit';
 import userReducer        from './reducers/userSlice';
 import { Provider }       from 'react-redux';
-import {AuthProvider}  from './contexts/AuthContext.js';
-import logger from 'redux-logger'
+import {AuthProvider}     from './contexts/AuthContext.js';
+import logger             from 'redux-logger';
 
 
 const store = configureStore({
